@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-family: Poppins;
+            margin-bottom: 150px;
+        }
+        body header nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 130px;
+            /* padding-top: 20px; */
+            border-bottom: solid;
+            border-width: 1px;
+            border-color: rgb(20, 4, 4);
+        }
+        .left-header-nav{
+            display: flex;
+            /* background-color: lightblue; */
+            font-weight: 700;
+            font-size: 70px;
+            align-items: center;
+            justify-content: center;
+            color: rgb(209, 25, 25);
+            /* padding-top: 5px; */
+            margin-right: 50px;
+            margin-left: 20px;
+            /* margin: 50px 20px; */
+        }
+        .right-header-nav{
+            margin-left: 100px;
+            padding-left: 20px;
+        }
+        .right-header-nav ul{
+            display: flex;
+            /* justify-content: space-between; */
+        }
+        .right-header-nav ul li{
+            /* margin-right: 40px; */
+            margin-left: 60px;
+            list-style: none;
+        }
+        .right-header-nav ul li a{
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            position: relative;
+        }
+        .right-header-nav ul li a::after{
+            content: '';
+            width:0;
+            height: 3px;
+            background: rgb(209, 25, 25);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        .right-header-nav ul li a:hover::after{
+            width: 100%;
+        }
+        .image{
+            height:550px;
+            width: 550px;
+        }
+        .container1{
+            display: flex;
+            justify-content: space-between;
+        }
+        main{
+            margin-top: 80px;
+        }
+        .image-container{
+            margin-top: 50px;
+            margin-right: 80px;
+        }
+        .text-container{
+            margin-top: 70px;
+            margin-left: 50px;  
+            flex: 1;          
+        }
+        .about-me{
+            margin-top: 250px;
+            margin-left: 50px;
+        }
+        .tab-list{
+            margin-top: 80px ;
+            margin-right: 50px;
+            /* /* display: flex; */
+            height: 500px;
+            width: 350px;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            /* vertical-align: middle; */
+            position: relative;
+        }
+        .tab-links{
+            font-size: 35px;
+            cursor: pointer;
+            /* position: fixed; */
+            position: relative;
+            color: bisque;
+        }
+        .tab-links::after{
+            content: '';
+            width:0%;
+            height: 3px;
+            background: rgb(209, 25, 25);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.7s;
+        }
+        .tab-links.active-link::after{
+            width: 100%;
+        }
+        .tab-contents{
+            display: none;
+        }
+        .tab-contents.active-tab{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .tab-container{
+            display: flex;
+            justify-content: space-evenly;
+            height: 500px;
+            /* align-items: center; */
+        }
+        .projects {
+            margin-left: 50px;
+            margin-top: 450px;
+        }
+        .projects h1{
+            font-size: 50px;
+        }
+        .project-container{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-title{
+            display: flex;
+            font-size: 26px;
+            position: relative;
+            cursor: pointer;
+            color: rgb(252, 222, 185);
+        }
+        .project-title::after{
+            content: '';
+            width:0%;
+            height: 3px;
+            background: rgb(209, 25, 25);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.7s;
+        }
+        .project-title.active-title::after{
+            width: 20%;
+        }
+        .project-description{
+            font-size: 20px;
+            line-height: 35px;
+            display: none;
+
+        }
+        .project-description.active-project{
+            display: block;
+        }
+        
+        .contact{
+            margin-top: 450px;
+            margin-left: 50px;
+            display: block;
+        }
+        .contact h1{
+            font-size: 50px;
+        }
+        .item{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .icon{
+            height: 25px;
+            width: 25px;
+            border-radius: 20px;
+            /* margin-right: 20px; */
+            background-color: white;
+        }
+        main h1{
+            color:rgb(255, 199, 130);
+            font-size: 50px;
+        }
+        .about{
+            list-style: none;
+        }
+        .about-me .tab-container .tab-list .tab-contents .about {
+            padding-left: 0px;
+        }
+        .about-me .tab-container .tab-list .tab-contents .about li{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body >
+    <header>
+        <nav>
+            <div class="left-header-nav">Smarajit.</div>
+            <div class="right-header-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about-me">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact-me">Contact me</a></li>
+                    </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container1" id="home">
+            <div class="text-container">
+                <p style="color:white; font-size: 50px; font-weight: 400; line-height: 100px;">
+                    Hi, I'm <span style="font-weight: 600; color: rgb(209, 25, 25); font-size: 55px;">Smarajit Adak</span> And I Am <br> A Passionate <span style="color: rgb(209, 25, 25);font-size: 55px;">Web Devoloper</span> And <br><span style="color:rgb(209, 25, 25);font-size: 55px;">Problem Solver</span>.  </p>
+            </div>
+            <div class="image-container">
+                <img class="image" src="image.png" alt="">
+            </div>
+        </div>
+        <div class="about-me" id="about-me">
+            <h1>ABOUT ME</h1>
+            <div style="margin-right: 50px;">
+                <p style="color: white; font-size: 24px; font-weight: 400;">
+                    A 3rd year undergraduate pursuing a B.Tech degree from IIEST Shibpur. I have a firm grip on Data Structure and Algorithms and am also a regular problem solver on Leetcode. 
+                    Also, I have skillsets for web development projects. I look forward to further upgrading my skills with real-life projects and being a valuable organizational asset.  
+                </p>
+            </div>
+            <div class="tab-container">
+                <div class="tab-list">
+                    <p class="tab-links active-link" onclick="openTab('education')">Education</p>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul class="about" style="padding-left: 0px;">
+                            <li >
+                                <h1 style="color: white; font-size: 20px;">10th Boards Examination</h1>
+                                <p style="margin-top: -9px; ">Heritage Academy High School</p>
+                                <p style="margin-top: -9px; ">Percentage: 86%</p>
+                                <p style="margin-top: -9px; ">2018-2019</p>
+                            </li>
+                            <li>
+                                <h1 style="color: white; font-size: 20px;">12th Boards Examination</h1>
+                                <p style="margin-top: -9px; ">Heritage Academy High School</p>
+                                <p style="margin-top: -9px; ">Percentage: 82%</p>
+                                <p style="margin-top: -9px; ">2019-2021</p>
+                            </li>
+                            <li>
+                                <h1 style="color: white; font-size: 20px;">Bachelor of Technology</h1>
+                                <p style="margin-top: -9px; ">Indian Institute Of Engineering Science and Technology,Shibpur</p>
+                                <p style="margin-top: -9px; ">CGPA:7.5 (till 4th semester)</p>
+                                <p style="margin-top: -9px; ">2022-2026(ongoing)</p>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-list">
+                    <p class="tab-links " onclick="openTab('skills')">Skills</p>
+                    <div class="tab-contents" id="skills">
+                        <ul class="about">
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>Object Oriented Programming</li>
+                            <li>Problem solving</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>javascript</li>
+                            <li>Node.js</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="projects" id="projects">
+            <h1>Projects</h1>
+                <div class="project-container">
+                    <p class="project-title active-title" onclick="openTab2('project1')"   style="margin-top: 40px;">Password Manager</p>
+                    <div class="project-description active-project" id="project1">
+                        In this project I created a password manager application with GUI based interface that stores username and password
+                        along with the website name locally into the system. The saved passwords along with the username 
+                        can be extracted by searching by the website name using the search bar. Also through this application
+                        new passwords can be generated and stored. <br>
+                        <br>Language used : Python <br>
+                        Libraries used : tkinter , messagebox , random , pyperclip , json.
+                        Github link : <a href="https://github.com/Smara2026/Password-Manager">https://github.com/Smara2026/Password-Manager</a>
+
+                    </div>
+                </div>
+                <div class="project-container " >
+                    <p class="project-title " onclick="openTab2('project2')" style="margin-top: 100px;">Snake Game</p>
+                    <div class="project-description" id="project2">     
+                        In this project the classical Snake game is recreated. The game has a 2 dimensional graphical user interface. In this game the snake 
+                        can be controlled and directed to all 4 directions. Objects(food) will appear over the screen at random positions. The sanke has to
+                        directed over those objects(eat) to gather points. The points are also recorded in a scoreboard. As the score increases the difficulty
+                        level increases by increasing the speed of the snake's movement. The game gets over when the snake collides with itself. <br>
+                        <br>Language used : Python <br>
+                        labraries used: turtle , random , time. <br>
+                        Github link : <a href="https://github.com/Smara2026/snakeGame">https://github.com/Smara2026/snakeGame</a>
+                        
+                    </div>
+                </div>
+        </div>
+
+        <div class="contact" id="contact-me">
+            <h1>Contact Me</h1>
+            <div class="item">
+                <img class="icon" src="portfolio icons/gmail.png" style="margin-right: 20px;">
+                <p>smarajitadak37@gmail.com</p>
+            </div>
+            <div class="item">
+                <img class="icon" src="portfolio icons/call.png" style="margin-right: 20px;">
+                <p>+917003467639</p>
+            </div>
+            <div style="margin-top: 15px; ;">
+                <a style="margin-right: 10px;" href="https://www.facebook.com/smarajit.adak" target="_blank"><img class="icon" src="portfolio icons/facebook.png" alt=""></a>
+                <a style="margin-right: 10px;" href="https://www.linkedin.com/in/smarajit-adak-93099b250/" target="_blank"><img class="icon" src="portfolio icons/linkedin2.png" alt=""></a>
+                <a style="margin-right: 10px;" href="https://github.com/Smara2026" target="_blank"><img class="icon" src="portfolio icons/github.png" alt=""></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="portfolio.js">
+    </script>
+</body>
+</html>
